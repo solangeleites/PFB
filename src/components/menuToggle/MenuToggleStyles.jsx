@@ -16,6 +16,10 @@ export const MenuHamburger = styled.div`
     ${tablet} {
         display: flex;
     }
+    ${mobile} {
+      position: absolute;
+      right: 90px;
+    }
 `;
 
 export const Icon = styled.span`

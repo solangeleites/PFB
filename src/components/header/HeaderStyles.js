@@ -60,6 +60,7 @@ export const Navbar = styled.nav`
     transform: ${(props) =>
       props.isOpen ? 'translateX(0%)' : 'translateX(200%)'};
   }
+
 `;
 export const NavbarList = styled.ul`
   display: flex;

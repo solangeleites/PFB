@@ -31,7 +31,7 @@ export const HeroCard = styled.div`
 `
 export const HeroImage = styled.div`
     width: 45%;
-    height:90%;
+    height:100%;
     display: flex;
     justify-content: center;
     align-items: center;

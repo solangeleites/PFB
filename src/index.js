@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { GlobalStyles } from './style/GlobalStyle';
 import { MenuProvider } from './context/Context';
+import { CartProvider } from './context/ContextCart';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <>
     <MenuProvider>
+      <CartProvider>
       <App />
+      </CartProvider>
     </MenuProvider>
     <GlobalStyles />
   </>

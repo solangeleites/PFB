@@ -49,5 +49,10 @@ export const ButtonPicture = styled.button`
     &:hover{
         transform: scale(1.05);
         transition: all 0.2s ease-in-out;
+        &:hover{
+        background-color: #000;
+        transition: all 0.5s ease-in-out;
+        color: white;
+    }
     }
 `

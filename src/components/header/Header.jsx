@@ -12,10 +12,8 @@ import {
 import { MenuContext } from '../../context/Context';
 import Cart from '../cart/Cart';
 
-
 const Header = () => {
   const ctx = useContext(MenuContext);
-  
   return (
     <>
       <StyledHeader>
@@ -31,9 +29,8 @@ const Header = () => {
           </NavbarList>
         </Navbar>
         <MenuToggle></MenuToggle>
-        <Cart></Cart>
+        <Cart />
       </StyledHeader>
-
     </>
   );
 };
