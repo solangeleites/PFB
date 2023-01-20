@@ -67,7 +67,6 @@ export const NavbarList = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  left: 425px;
   position: relative;
 
   ${tablet} {
