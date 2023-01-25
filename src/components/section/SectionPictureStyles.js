@@ -1,8 +1,11 @@
-import styled from "styled-components";
-import { Section } from "../globalComponents/GlobalComponents";
-import { mobile , tablet} from "../../media/queries";
+import styled from 'styled-components';
+import { Section } from '../globalComponents/GlobalComponents';
+import { mobile, tablet } from '../../media/queries';
+import { motion } from 'framer-motion';
 
 export const ContainerPicture = styled(Section)`
+
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -18,41 +21,40 @@ export const ContainerPicture = styled(Section)`
         justify-content: center;
         align-items: center;
     }
-`
+`;
 export const CardPicture = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 420px;
-    height: 600px;
-    border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 420px;
+  height: 600px;
+  border: 1px solid black;
 
-    & img{
-        object-fit: cover;
-        width: 90%;
-        height:70%;
-        border-radius: 5px;
-    }
+  & img {
+    object-fit: cover;
+    width: 90%;
+    height: 70%;
+    border-radius: 5px;
+  }
 
-    ${tablet}{
-        width: 90%;
-
-    }
-`
+  ${tablet} {
+    width: 90%;
+  }
+`;
 export const ButtonPicture = styled.button`
-    padding: 10px 30px;
-    border: 1px solid black;
-    background-color: transparent;
-    cursor: pointer;
+  padding: 10px 30px;
+  border: 1px solid black;
+  background-color: transparent;
+  cursor: pointer;
 
-    &:hover{
-        transform: scale(1.05);
-        transition: all 0.2s ease-in-out;
-        &:hover{
-        background-color: #000;
-        transition: all 0.5s ease-in-out;
-        color: white;
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: #000;
+      transition: all 0.5s ease-in-out;
+      color: white;
     }
-    }
-`
+  }
+`;

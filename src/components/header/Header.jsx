@@ -11,12 +11,23 @@ import {
 } from './HeaderStyles';
 import { MenuContext } from '../../context/Context';
 import Cart from '../cart/Cart';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Header = () => {
   const ctx = useContext(MenuContext);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
+  
   return (
     <>
-      <StyledHeader>
+      <StyledHeader data-aos="fade-down">
         <Logo>
           <TitleLogo>PFB</TitleLogo>
           <TitleLogoMini> Picture for buy</TitleLogoMini>

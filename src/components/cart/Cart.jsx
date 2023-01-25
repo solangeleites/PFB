@@ -12,9 +12,11 @@ import CartProduct from '../cartItem/CartProduct';
 import { useDispatch } from 'react-redux';
 import { deleteAllCart } from '../../actions/counterActions';
 
+
 const Cart = () => {
   const ctx = useContext(CartContext);
   const dispatch = useDispatch();
+
 
   return (
     <>
