@@ -7,12 +7,13 @@ import { increment, decrement } from '../../actions/counterActions'
 const CartCounter = () => {
   const dispatch = useDispatch()
 
- const quantity = useSelector(state => state.counter.quantity)
+  const counter = useSelector(state => state.shop.cart[0])
+  console.log(counter)
 
   return (
   <CartContainerHandler>
     <CartQuantity onClick={() => dispatch(decrement()) }>-</CartQuantity>
-    <CartSpanState>{quantity}</CartSpanState>
+    <CartSpanState>{counter.quantity}</CartSpanState>
     <CartQuantity onClick={() => dispatch(increment()) } >+</CartQuantity>
 </CartContainerHandler>
 
