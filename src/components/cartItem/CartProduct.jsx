@@ -12,12 +12,19 @@ import {
   CartTotalPrice,
 } from './CartItemStyles';
 import CartCounter from '../cartCounter/CartCounter';
-
-
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 
 const CartProduct = () => {
   const cart = useSelector((state) => state.shop.cart);
+  const total = useSelector((state) => state.shop.total);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'TOTAL' });
+  }, [cart, dispatch]);
 
   return (
     <>
@@ -28,7 +35,7 @@ const CartProduct = () => {
 
             <CartContainerInfo>
               <CartItemTitle>{product.name}</CartItemTitle>
-              <CartItemPrice>{product.price}</CartItemPrice>
+              <CartItemPrice >{product.price}</CartItemPrice>
             </CartContainerInfo>
           
           <CartCounter />
@@ -40,7 +47,7 @@ const CartProduct = () => {
 
       <CartContainerTotal>
         <CartTotal>Total:</CartTotal>
-        <CartTotalPrice>$10 pe</CartTotalPrice>
+        <CartTotalPrice>{total}</CartTotalPrice>
       </CartContainerTotal>
     </>
   );

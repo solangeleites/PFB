@@ -1,4 +1,11 @@
-import { ADD_TO_CART, DECREMENT, DELETE_ALL, INCREMENT, DELETE_ITEM } from '../types/index';
+import {
+  ADD_TO_CART,
+  DECREMENT,
+  DELETE_ALL,
+  INCREMENT,
+  DELETE_ITEM,
+  TOTAL,
+} from '../types/index';
 
 export const initialState = {
   products: [
@@ -55,7 +62,9 @@ export const shopReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       // buscar si el producto ya esta en el carrito
-      const index = state.cart.findIndex(item => item.id === action.payload.id);
+      const index = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
       if (index !== -1) {
         // si ya existe en el carrito, aumentar la cantidad en 1
         const newCart = [...state.cart];
@@ -63,37 +72,55 @@ export const shopReducer = (state = initialState, action) => {
         return { ...state, cart: newCart };
       } else {
         // si no existe en el carrito, agregar el producto con cantidad 1
-        return { ...state,
-                  cart: [...state.cart, { ...action.payload, quantity: 1 }] };
+        return {
+          ...state,
+          cart: [...state.cart, { ...action.payload, quantity: 1 }],
+        };
       }
     case INCREMENT:
       // buscar el producto en el carrito
-      const index2 = state.cart.findIndex(item => item.id === action.payload.id);
-      if(index2 !== -1) {
+      const index2 = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index2 !== -1) {
         const newCart2 = [...state.cart];
         newCart2[index2].quantity += 1;
         return { ...state, cart: newCart2 };
       }
-      case DECREMENT:
-        // buscar el producto en el carrito
-        const index3 = state.cart.findIndex(item => item.id === action.payload.id);
-        if(index3 !== -1) {
-          const newCart3 = [...state.cart];
-          if(newCart3[index3].quantity > 0){
-            newCart3[index3].quantity -=1;
-            return { ...state, cart: newCart3 };
-          }
+    case DECREMENT:
+      // buscar el producto en el carrito
+      const index3 = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index3 !== -1) {
+        const newCart3 = [...state.cart];
+        if (newCart3[index3].quantity > 0) {
+          newCart3[index3].quantity -= 1;
+          return { ...state, cart: newCart3 };
         }
+      }
+    case TOTAL:
+      let total = 0;
+      state.cart.forEach((item) => {
+        total += item.price * item.quantity;
+      });
+      return { ...state, total };
+    
     case DELETE_ITEM:
       // buscar el producto en el carrito
-      const index4 = state.cart.findIndex(item => item.id === action.payload.id);
-      if(index4 !== -1){
-  const shouldDelete = window.confirm('¿Estás seguro de eliminar este producto?');
-  if(shouldDelete){
-    const newCart4 = [...state.cart];
-    newCart4.splice(index4, 1);
-    return { ...state, cart: newCart4 };
-  }}
+      const index4 = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index4 !== -1) {
+        const shouldDelete = window.confirm(
+          '¿Estás seguro de eliminar este producto?'
+        );
+        if (shouldDelete) {
+          const newCart4 = [...state.cart];
+          newCart4.splice(index4, 1);
+          return { ...state, cart: newCart4 };
+        }
+      }
     case DELETE_ALL:
       return { ...state, cart: [] };
     default:
