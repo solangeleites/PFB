@@ -5,6 +5,7 @@ import Hero from './components/hero/Hero';
 import SectionPicture from './components/section/SectionPicture';
 import store from './store';
 import { Provider } from 'react-redux';
+import Footer from './components/footer/Footer';
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
         <Main>
           <Hero />
           <SectionPicture />
+          <Footer />
         </Main>
       </Provider>
     </>

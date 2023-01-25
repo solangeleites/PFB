@@ -52,12 +52,12 @@ export const HeroImage = styled.div`
     }
 `
 export const HeroTitle = styled.h1`
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
     text-align: center;
 
     ${tablet}{
-        font-size: 2rem;
+        font-size: 1rem;
         width: 100%;
         height: 100%;
         text-align:center;
@@ -65,8 +65,5 @@ export const HeroTitle = styled.h1`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-
-    }
-    
+    } 
 `

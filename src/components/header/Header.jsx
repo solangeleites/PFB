@@ -36,7 +36,6 @@ const Header = () => {
           <NavbarList>
             <NavbarItem>Home</NavbarItem>
             <NavbarItem>Pictures</NavbarItem>
-            <NavbarItem>Contact</NavbarItem>
           </NavbarList>
         </Navbar>
         <MenuToggle></MenuToggle>
