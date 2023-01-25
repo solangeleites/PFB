@@ -38,7 +38,7 @@ const CartProduct = () => {
               <CartItemPrice >{product.price}</CartItemPrice>
             </CartContainerInfo>
           
-          <CartCounter />
+          <CartCounter quantity={product.quantity} />
 
           </CartItem>
         </CartContainerItem>

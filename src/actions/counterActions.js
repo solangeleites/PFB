@@ -9,9 +9,9 @@ export const deleteAllCart = () => ({type: DELETE_ALL});
 
 // ---------------------------------------------------
 
-export const increment = () => ({type: INCREMENT});
+export const increment = (id) => ({type: INCREMENT, payload: {id}});
 
-export const decrement = () => ({type: DECREMENT});
+export const decrement = (id) => ({type: DECREMENT, payload: {id}});
 
 export const calculateTotal = () => ({type: TOTAL});
 
