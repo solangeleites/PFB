@@ -14,7 +14,7 @@ import {
 import CartCounter from '../cartCounter/CartCounter';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-
+import { CartEmptyMsg } from '../cart/CartStyles';
 
 const CartProduct = () => {
   const cart = useSelector((state) => state.shop.cart);

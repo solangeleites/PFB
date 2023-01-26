@@ -38,8 +38,18 @@ export const CardPicture = styled.div`
     border-radius: 5px;
   }
 
+  & h2{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+
   ${tablet} {
     width: 90%;
+  }
+
+  ${mobile} {
+    text-align: center;
   }
 `;
 export const ButtonPicture = styled.button`

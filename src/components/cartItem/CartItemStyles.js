@@ -1,9 +1,15 @@
 import styled from "styled-components";
+import {mobile} from '../../media/queries'
 
 export const CartContainerItem = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  ${mobile} {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const CartItem = styled.div`
   display: flex;
@@ -12,11 +18,19 @@ export const CartItem = styled.div`
   gap: 20px;
   padding: 20px;
   border: 1px solid black;
+  max-width: 400px;
 
   & img {
     height: 70px;
     width: 70px;
     object-fit: cover;
+  }
+  ${mobile} {
+    max-width: 330px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 `;
 
@@ -29,6 +43,7 @@ export const CartContainerInfo = styled.div`
 export const CartItemTitle = styled.h3`
   font-weight: 600;
   font-size: 16px;
+  text-align: center;
 `;
 export const CartItemPrice = styled.p`
   background: linear-gradient(to right, black, grey);

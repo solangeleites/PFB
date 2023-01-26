@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobile, tablet } from '../../media/queries';
+import { mobile, tablet, widescreen,  } from '../../media/queries';
 
 export const ContainerIcon = styled.div`
   border: 1px solid #000;
@@ -52,6 +52,12 @@ export const ContainerProducts = styled.div`
     transform: ${(props) =>
       props.clicked ? 'translateX(0%)' : 'translateX(200%)'};
   }
+  ${mobile} {
+    width: 100%;
+    border-bottom: 2px solid #000;
+    border-left: none;
+    height: calc(100vh - 60px);
+  }
 `;
 export const CartTitle = styled.h2`
   color: black;
@@ -67,9 +73,16 @@ export const CartEmptyMsg = styled.p`
   font-size: 1.5rem;
   font-weight: 400;
   position: absolute;
-  top: 50%;
+  top: 10%;
   ${mobile} {
     font-size: 18px;
+  }
+  ${tablet} {
+    top: 10%;
+    background-color: red;
+  }
+  ${widescreen}{
+    top: 8%;
   }
 `;
 export const CartButton = styled.button`
