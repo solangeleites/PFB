@@ -119,6 +119,6 @@ export const CartButtonDelete = styled.button`
 
   &:hover {
     transition: 0.3s all ease-out;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 `;
