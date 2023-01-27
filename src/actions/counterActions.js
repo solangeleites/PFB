@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DELETE_ITEM, DELETE_ALL, INCREMENT, DECREMENT, TOTAL } from '../types/index';
+import { ADD_TO_CART, DELETE_ITEM, DELETE_ALL, INCREMENT, DECREMENT, TOTAL, BUY } from '../types/index';
 
 export const addToCart = () => ({type: ADD_TO_CART});
 
@@ -14,5 +14,7 @@ export const increment = (id) => ({type: INCREMENT, payload: {id}});
 export const decrement = (id) => ({type: DECREMENT, payload: {id}});
 
 export const calculateTotal = () => ({type: TOTAL});
+
+export const buy = () => ({type: BUY});
 
 

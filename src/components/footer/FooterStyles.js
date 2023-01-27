@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {mobile, tablet} from '../../media/queries';
 export const FooterContainer = styled.footer`
     padding: 3rem 0;
     display: flex;
@@ -7,10 +7,15 @@ export const FooterContainer = styled.footer`
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    border-top: 1px solid black;
+    border-top: 1px solid #D1D1D1;
     width: 100%;
     height: 100%;
     gap: 10rem;
+
+    ${mobile}{
+        flex-direction: column;
+        gap: 2rem;
+    }
 `
 export const  FooterContainerText = styled.div`
     display: flex;

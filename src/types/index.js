@@ -4,3 +4,4 @@ export const DELETE_ALL = 'DELETE_ALL';
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const TOTAL = 'TOTAL';
+export const BUY = 'BUY';

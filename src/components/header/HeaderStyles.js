@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobile, tablet } from '../../media/queries';
+import {  tablet } from '../../media/queries';
 
 export const StyledHeader = styled.header`
   margin: 0 auto;
@@ -12,7 +12,10 @@ export const StyledHeader = styled.header`
   top: 0;
   z-index: 2;
   padding: 0 70px 0 37px;
-  background-color: #fff;
+  background: #fff;
+box-shadow: 0 1px 0.5px 0 #EFEFEF;
+backdrop-filter: blur( 14px );
+-webkit-backdrop-filter: blur( 1px );
 
   ${tablet} {
     padding: 0px 70px 0px 20px;

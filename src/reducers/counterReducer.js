@@ -3,8 +3,8 @@ import {
   DECREMENT,
   DELETE_ALL,
   INCREMENT,
-  DELETE_ITEM,
   TOTAL,
+  BUY
 } from '../types/index';
 
 export const initialState = {
@@ -49,15 +49,7 @@ export const initialState = {
   cart: [],
 };
 
-// export const shopReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case ADD_TO_CART:
-//       return { ...state,
-//                   cart: [...state.cart, action.payload] };
-//     default:
-//       return state;
-//   }
-// };
+
 export const shopReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
@@ -87,40 +79,40 @@ export const shopReducer = (state = initialState, action) => {
         newCart2[index2].quantity += 1;
         return { ...state, cart: newCart2 };
       }
-    case DECREMENT:
-      // buscar el producto en el carrito
-      const index3 = state.cart.findIndex(
-        (item) => item.id === action.payload.id
-      );
-      if (index3 !== -1) {
-        const newCart3 = [...state.cart];
-        if (newCart3[index3].quantity > 0) {
-          newCart3[index3].quantity -= 1;
-          return { ...state, cart: newCart3 };
+      case DECREMENT:
+        // buscar el producto en el carrito
+        const index3 = state.cart.findIndex(
+          (item) => item.id === action.payload.id
+        );
+        if (index3 !== -1) {
+          const newCart3 = [...state.cart];
+          if (newCart3[index3].quantity > 0) {
+            newCart3[index3].quantity -= 1;
+            if (newCart3[index3].quantity === 0) {
+              // Mostrar el cuadro de diálogo de confirmación
+              if (window.confirm("¿Desea eliminar este producto?")) {
+                newCart3.splice(index3, 1);
+                return { ...state, cart: newCart3 };
+              } else {
+                newCart3[index3].quantity += 1;
+                return { ...state, cart: newCart3 };
+              }
+            }
+            return { ...state, cart: newCart3 };
+          }
         }
-      }
     case TOTAL:
       let total = 0;
       state.cart.forEach((item) => {
         total += item.price * item.quantity;
       });
       return { ...state, total };
-    
-    case DELETE_ITEM:
-      // buscar el producto en el carrito
-      const index4 = state.cart.findIndex(
-        (item) => item.id === action.payload.id
-      );
-      if (index4 !== -1) {
-        const shouldDelete = window.confirm(
-          '¿Estás seguro de eliminar este producto?'
-        );
-        if (shouldDelete) {
-          const newCart4 = [...state.cart];
-          newCart4.splice(index4, 1);
-          return { ...state, cart: newCart4 };
+      case BUY:
+        if (window.confirm("¿Desea realizar la compra?")) {
+          return { ...state, cart: [] };
+        } else {
+          return { ...state };
         }
-      }
     case DELETE_ALL:
       return { ...state, cart: [] };
     default:

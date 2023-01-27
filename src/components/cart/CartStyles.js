@@ -36,10 +36,12 @@ export const ContainerProducts = styled.div`
   z-index: 2;
   min-width: 375px;
   background-color: white;
-  border-left: 1px solid #000;
+  border-left: 1px solid  #EFEFEF;
   transition: all 0.5s ease-in-out;
   transform: ${(props) =>
     props.clicked ? 'translateX(0%)' : 'translateX(200%)'};
+
+background-image: linear-gradient(to right top, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
 
   &::-webkit-scrollbar {
     display: none;
@@ -63,6 +65,7 @@ export const CartTitle = styled.h2`
   color: black;
   font-size: 2rem;
   font-weight: 400;
+
   ${mobile} {
     font-size: 24px;
   }
@@ -73,25 +76,49 @@ export const CartEmptyMsg = styled.p`
   font-size: 1.5rem;
   font-weight: 400;
   position: absolute;
-  top: 10%;
+
+
   ${mobile} {
     font-size: 18px;
   }
   ${tablet} {
     top: 10%;
-    background-color: red;
   }
   ${widescreen}{
-    top: 8%;
+    top: 10%;
   }
 `;
 export const CartButton = styled.button`
-  cursor: pointer;
   padding: 10px 35px;
   color: black;
   border-radius: 10px;
   border: none;
-  background-color: #a9a9d2;
+  color: #fff;
+  background-color: #131415;
   transition: 0.3s all ease-out;
   width: 100%;
+  cursor: pointer;
+    &:hover {
+    transition: 0.3s all ease-out;
+    transform: scale(1.05);
+  }
+`;
+
+export const CartButtonDelete = styled.button`
+  padding: 10px 35px;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  color: #131415;
+  background-color: #fff;
+  transition: 0.3s all ease-out;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid #131415;
+
+
+  &:hover {
+    transition: 0.3s all ease-out;
+    transform: scale(1.1);
+  }
 `;

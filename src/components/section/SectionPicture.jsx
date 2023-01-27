@@ -12,7 +12,6 @@ import { useEffect } from 'react';
 const SectionPicture = () => {
 
   const addToCart = (product) => {
-    console.log(product.name + '' + product.price);
     store.dispatch({ type: "ADD_TO_CART", payload: product });
   }
 

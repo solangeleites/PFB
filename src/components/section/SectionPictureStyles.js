@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Section } from '../globalComponents/GlobalComponents';
 import { mobile, tablet } from '../../media/queries';
-import { motion } from 'framer-motion';
 
 export const ContainerPicture = styled(Section)`
 
