@@ -14,9 +14,11 @@ import Cart from '../cart/Cart';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const ctx = useContext(MenuContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({
@@ -28,15 +30,15 @@ const Header = () => {
   return (
     <>
       <StyledHeader data-aos="fade-down">
-        <Logo>
+        <Logo onClick={()=> navigate('/')}>
           <TitleLogo>PFB</TitleLogo>
           <TitleLogoMini> Picture for buy</TitleLogoMini>
         </Logo>
         <Navbar isOpen={ctx.isMenuOpen}>
           <NavbarList>
-            <NavbarItem>Home</NavbarItem>
-            <NavbarItem>Pictures</NavbarItem>
-            <NavbarItem>Contact</NavbarItem>
+            <NavbarItem to='/'>Home</NavbarItem>
+            <NavbarItem to='Pictures'>Pictures</NavbarItem>
+            <NavbarItem to='Contact'>Contact</NavbarItem>
           </NavbarList>
         </Navbar>
         <MenuToggle></MenuToggle>

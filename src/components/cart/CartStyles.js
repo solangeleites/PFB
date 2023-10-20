@@ -36,12 +36,11 @@ export const ContainerProducts = styled.div`
   z-index: 2;
   min-width: 375px;
   background-color: white;
-  border-left: 1px solid  #EFEFEF;
   transition: all 0.5s ease-in-out;
+  background: black;
+  color: white;
   transform: ${(props) =>
     props.clicked ? 'translateX(0%)' : 'translateX(200%)'};
-
-background-image: linear-gradient(to right top, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
 
   &::-webkit-scrollbar {
     display: none;
@@ -62,9 +61,9 @@ background-image: linear-gradient(to right top, #ffffff, #fcfcfc, #f9f9f9, #f6f6
   }
 `;
 export const CartTitle = styled.h2`
-  color: black;
+  color: white;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight:500;
 
   ${mobile} {
     font-size: 24px;
@@ -72,7 +71,7 @@ export const CartTitle = styled.h2`
 `;
 
 export const CartEmptyMsg = styled.p`
-  color: black;
+  color: white;
   font-size: 1.5rem;
   font-weight: 400;
   position: absolute;
@@ -94,23 +93,26 @@ export const CartButton = styled.button`
   border-radius: 10px;
   border: none;
   color: #fff;
-  background-color: #131415;
+  background: grey;
   transition: 0.3s all ease-out;
   width: 100%;
   cursor: pointer;
     &:hover {
     transition: 0.3s all ease-out;
     transform: scale(1.05);
+    background: white;
+    color: black;
+    text-transform: uppercase;
   }
 `;
 
 export const CartButtonDelete = styled.button`
   padding: 10px 35px;
-  color: black;
+  color: grey;
   border-radius: 10px;
   border: none;
   color: #131415;
-  background-color: #fff;
+  background-color:grey;
   transition: 0.3s all ease-out;
   width: 100%;
   cursor: pointer;

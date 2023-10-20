@@ -68,7 +68,8 @@ export const CartContainerTotal = styled.div`
 `;
 
 export const CartTotal = styled.p`
-  font-weight: 700;
+  font-weight: 500;
+
 `;
 export const CartTotalPrice = styled.span`
   font-weight: 400;

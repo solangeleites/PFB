@@ -69,6 +69,8 @@ export const shopReducer = (state = initialState, action) => {
           cart: [...state.cart, { ...action.payload, quantity: 1 }],
         };
       }
+      break;
+
     case INCREMENT:
       // buscar el producto en el carrito
       const index2 = state.cart.findIndex(
@@ -79,6 +81,7 @@ export const shopReducer = (state = initialState, action) => {
         newCart2[index2].quantity += 1;
         return { ...state, cart: newCart2 };
       }
+      break;
       case DECREMENT:
         // buscar el producto en el carrito
         const index3 = state.cart.findIndex(
@@ -101,6 +104,7 @@ export const shopReducer = (state = initialState, action) => {
             return { ...state, cart: newCart3 };
           }
         }
+        break;
     case TOTAL:
       let total = 0;
       state.cart.forEach((item) => {
@@ -113,6 +117,7 @@ export const shopReducer = (state = initialState, action) => {
         } else {
           return { ...state };
         }
+        break;
     case DELETE_ALL:
       return { ...state, cart: [] };
     default:

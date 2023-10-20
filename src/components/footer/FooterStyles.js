@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {mobile, tablet} from '../../media/queries';
+import {mobile} from '../../media/queries';
 export const FooterContainer = styled.footer`
     padding: 3rem 0;
     display: flex;
